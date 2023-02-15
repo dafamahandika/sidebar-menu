@@ -1,0 +1,235 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background: #0A8897;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+
+.sidebar .menu-icon {
+    margin: 10px;
+    height: 25px;
+    width: 25px;
+}
+
+.sidebar.close{
+  width: 78px;
+}
+
+.sidebar .logo-details{
+  height: 70px;
+  width: 80%;
+  display: flex;
+  border-radius: 0px 50px 50px 0;
+  background-color: #f4f6f9;
+}
+.sidebar .logo-details img{
+    width: 180px;
+    margin: auto;
+    height: auto;
+}
+
+.sidebar .nav-links{
+  height: 100%;
+  padding: 30px 0 150px 0;
+  overflow: auto;
+}
+.sidebar.close .nav-links{
+  overflow: visible;
+}
+.sidebar .nav-links::-webkit-scrollbar{
+  display: none;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+
+.sidebar .sub-menu a:hover{ 
+  border-radius: 10px;
+  color: black;
+  background: #ffffff;
+}
+
+
+.sidebar .nav-links li .iocn-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar.close .nav-links li .iocn-link{
+  display: block
+}
+.sidebar .nav-links li i{
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li.showMenu i.arrow{
+  transform: rotate(-180deg);
+}
+.sidebar.close .nav-links i.arrow{
+  display: none;
+}
+.sidebar.close .logo-details {
+    display: none;
+}
+
+.sidebar.close .nav-links {
+    display: none;
+}
+
+.sidebar .nav-links li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .nav-links li a .link_name{
+  margin-left: 50px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li a:hover .link_name {
+    color: black;
+}
+
+.sidebar.close .nav-links li a .link_name{
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li .sub-menu{
+  padding: 6px 6px 14px 80px;
+  margin-top: -10px;
+  display: none;
+}
+
+.sidebar .nav-links li.showMenu .sub-menu{
+  display: block;
+}
+.sidebar .nav-links li .sub-menu a{
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu a:hover{
+    color: black;
+  opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar.close .nav-links li:hover .sub-menu{
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li .sub-menu .link_name{
+  display: none;
+}
+.sidebar.close .nav-links li .sub-menu .link_name{
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu.blank{
+  opacity: 1;
+  pointer-events: auto;
+  padding: 3px 20px 6px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank{
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  height: 100vh;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+}
+.sidebar.close ~ .home-section{
+  left: 78px;
+  width: calc(100% - 78px);
+}
+.home-section .home-content{
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .bx-menu{
+  position: absolute;
+  margin-top: 13px;
+  margin-left: 275px;
+  justify-content: left;
+  color: #000;
+  font-size: 35px;
+}
+
+.sidebar.close .bx-menu{
+  margin-top: 12px;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 35px;
+}
+
+.home-section .home-content .text{
+  margin-left: 60px;
+  font-size: 26px;
+  font-weight: 600;
+}
+@media (max-width: 400px) {
+  .sidebar.close .nav-links li .sub-menu{
+    display: none;
+  }
+  .sidebar{
+    width: 78px;
+  }
+  .sidebar.close{
+    width: 0;
+  }
+  .home-section{
+    left: 78px;
+    width: calc(100% - 78px);
+    z-index: 100;
+  }
+  .sidebar.close ~ .home-section{
+    width: 100%;
+    left: 0;
+  }
+}
